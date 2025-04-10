@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak - BlueVenture</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-section {
+      padding: 80px 0;
+    }
+
+    .contact-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+
+    footer {
+      background-color: #111;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">BlueVenture</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Event</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Kontak -->
+  <section class="contact-section bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="contact-title">Hubungi Kami</h2>
+        <p>Jika ada pertanyaan tentang event, sponsor, atau kerja sama, silakan isi formulir berikut atau hubungi kami langsung.</p>
+      </div>
+
+      <div class="row">
+        <!-- Info Kontak -->
+        <div class="col-md-6 mb-4">
+          <h5>Info Kontak</h5>
+          <p><strong>Alamat:</strong> Jl. Festival No. 123, Jakarta</p>
+          <p><strong>Email:</strong> info@BlueVenture.com</p>
+          <p><strong>Telepon:</strong> +62 812 3456 7890</p>
+          <p><strong>Instagram:</strong> @BlueVenture.id</p>
+        </div>
+
+        <!-- Form Kontak -->
+        <div class="col-md-6">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="pesan" class="form-label">Pesan</label>
+              <textarea class="form-control" id="pesan" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+          </form>
+          <div id="alertKontak" class="alert alert-success mt-3 d-none" role="alert">
+            Terima kasih! Pesan kamu telah dikirim.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3">
+    <small>&copy; BlueVenture. Semua hak cipta dilindungi.</small>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("alertKontak").classList.remove("d-none");
+      this.reset();
+    });
+  </script>
+
+<script src="script.js"></script>
+</body>
+</html>
